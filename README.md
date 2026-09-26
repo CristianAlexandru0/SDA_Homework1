@@ -1,6 +1,6 @@
 # Assignment 1 - Data Structures and Algorithms
 
-**Student:** Cristian Alexandru Catalin 
+**Student:** Cristian Alexandru Catalin  
 **Group:** 312CC
 
 ---
@@ -46,31 +46,31 @@ The following operations are required:
 ## Structures
 
 ### `struct unit`
-Represents an intervention unit. 
+Represents an intervention unit.  
 Contains: `id`, `type`, and `availability` (whether it's free or not).
 
 ### `struct incident`
-Represents an incident. 
+Represents an incident.  
 Contains: `id`, `priority`, `description`, `status` (its state: queued / intervened / solved), and `prev`/`next` pointers, since it's part of a circular doubly linked list.
 
 ### `struct intervention`
-Represents an intervention. 
+Represents an intervention.  
 Contains: a pointer to the `incident`, a pointer to the `unit`, and `prev`/`next` pointers.
 
 ### `node_unit` / `qlist_u`
-`node_unit` is one node of the unit queue: a pointer to a unit, and a pointer to the next node. 
+`node_unit` is one node of the unit queue: a pointer to a unit, and a pointer to the next node.  
 `qlist_u` is the queue itself: just a `head` and a `tail` pointer.
 
 ### `node_incident` / `qlist_i`
-`node_incident` is one node of the incident queue: a pointer to an incident, and a pointer to the next node.
+`node_incident` is one node of the incident queue: a pointer to an incident, and a pointer to the next node.  
 `qlist_i` is the queue itself: just a `head` and a `tail` pointer.
 
 ### `node_stack` / `stack`
-`node_stack` is one node of the history stack: a pointer to an intervention, and a pointer to the next node. 
+`node_stack` is one node of the history stack: a pointer to an intervention, and a pointer to the next node.  
 `stack` is the stack itself: just a `head` pointer (interventions are pushed and popped from here).
 
 ### `struct system`
-Holds the whole system together.
+Holds the whole system together.  
 Contains: `nr_unitati` (number of units) and the `units` array, the head pointers of the circular lists (`incidents`, `interventions`), the unit queue (`queue_available_units`), the 3 incident queues by priority (`queue_low`, `queue_medium`, `queue_high`), and the `history_stack`.
 
 ---
